@@ -1,0 +1,2 @@
+Пример массивов
+https://www.bestprog.net/ru/2019/12/19/c-arrays-of-strings-examples-of-solving-the-most-common-tasks-ru/
