@@ -1,24 +1,33 @@
-﻿namespace ConsoleApp8
+﻿namespace Result
 {
   class Program
   {
     static void Main(string[] args)
     {
-      // Сортировка массива строк методом вставки
+      
       // 1. Объявление переменных
       string[] AS; // массив строк
-      int count; // количество элементов в массиве
+      int count = 0; // количество элементов в массиве
       string[] AS1;
+
       // 2. Ввести количество строк
-      Console.Write("колличество строк = ");
+      Console.Write("введите колличество строк = ");
       
-      count = Int32.Parse(Console.ReadLine());
-      if (count == 0)
-      {
-        Console.WriteLine("Введите число строк:");
-        count = 1;
-      }
+      string s = Console.ReadLine()!;
       
+      
+      if (s == null || s == "") 
+        {
+            Console.WriteLine("Ошибка Пустая строка ");
+                     
+
+        }
+        else
+        {
+            count = Int32.Parse(s);
+        }
+      
+           
 
       // 3. Выделить память для массива из count строк
       AS = new string[count];
@@ -30,7 +39,7 @@
       for (int i=0; i<AS.Length; i++)
       {
         Console.Write("AS[{0}] = ", i);
-        AS[i] = Console.ReadLine();
+        AS[i] = Console.ReadLine()!;
         Console.WriteLine(AS[i].Length);
       }
 
@@ -41,20 +50,20 @@
         if  ( AS[i].Length <= 3)
         {
             Console.WriteLine();
-            Console.WriteLine("Отсортированный массив:");
-            Console.WriteLine("меньше 3 :" + AS[i]);
+            Console.WriteLine("строка меньше 3 :" + AS[i]);
             AS1[i] = AS[i];
         }
+        else
+        {
+            Console.WriteLine("строка больше 3 :" + AS[i]);
+        }
       }
-
+      AS1 = AS1.Where(x => x != null).ToArray();
       Console.WriteLine();
       Console.WriteLine("Отсортированный массив:");
-      for (int i = 0; i < AS1.Length; i++)
-      {
-        //Console.WriteLine("AS1[{0}] = {1}", i, AS1[i]);
-        
-      }
+      
       Console.WriteLine(string.Join(",",AS1));
+      
       Console.ReadKey();
     }
   }
