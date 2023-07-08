@@ -6,8 +6,8 @@
     {
       
       // 1. Объявление переменных
-      string[] AS; // массив строк
-      int count = 0; // количество элементов в массиве
+      string[] AS; 
+      int count = 0; 
       string[] AS1;
 
       // 2. Ввести количество строк
@@ -40,7 +40,7 @@
       {
         Console.Write("AS[{0}] = ", i);
         AS[i] = Console.ReadLine()!;
-        Console.WriteLine(AS[i].Length);
+        //Console.WriteLine(AS[i].Length);
       }
 
       
@@ -50,12 +50,12 @@
         if  ( AS[i].Length <= 3)
         {
             Console.WriteLine();
-            Console.WriteLine("строка меньше 3 :" + AS[i]);
+            //Console.WriteLine("строка меньше 3 :" + AS[i]);
             AS1[i] = AS[i];
         }
         else
         {
-            Console.WriteLine("строка больше 3 :" + AS[i]);
+            //Console.WriteLine("строка больше 3 :" + AS[i]);
         }
       }
       AS1 = AS1.Where(x => x != null).ToArray();
